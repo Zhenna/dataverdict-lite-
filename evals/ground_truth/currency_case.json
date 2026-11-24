@@ -1,0 +1,11 @@
+{
+  "scenario": "currency_case",
+  "origin_layer": "silver",
+  "origin_table": "silver.stg_payments",
+  "faulty_commit": "d8449e2da48bf53eb1c3019c3bd73844c557d3e6",
+  "last_good_commit": "1385a45414b059c6f33af1e798b8a2b01f86d84a",
+  "affected_table": "gold.monthly_revenue",
+  "expected_total_usd": 1672.0,
+  "reported_total_usd": 167200.0,
+  "inflation_factor": 100.0
+}
