@@ -221,3 +221,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+fixtures/
+.env
+.venv/
+__pycache__/
+*.duckdb
+.pytest_cache/
