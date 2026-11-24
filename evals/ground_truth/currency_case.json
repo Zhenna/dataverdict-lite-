@@ -1,11 +1,42 @@
 {
   "scenario": "currency_case",
+  "tier": 2,
   "origin_layer": "silver",
   "origin_table": "silver.stg_payments",
-  "faulty_commit": "d8449e2da48bf53eb1c3019c3bd73844c557d3e6",
-  "last_good_commit": "1385a45414b059c6f33af1e798b8a2b01f86d84a",
   "affected_table": "gold.monthly_revenue",
+  "faulty_commit": "348409398ff240557da269d6a2d5251d7781d6ac",
+  "last_good_commit": "03cfc2bbcd7422471694961f09898eca2c48abb9",
+  "deployed_commit": "bd8aaf6d943d4fdd0c0e317a14dad0a1cbb05a13",
+  "undeployed_commits": [
+    "f662e6eef6d3974f5c0e9ad768121af4d90ae2f0"
+  ],
+  "commits": [
+    {
+      "hash": "1385a45414b059c6f33af1e798b8a2b01f86d84a",
+      "message": "Initialize payment transformations"
+    },
+    {
+      "hash": "03cfc2bbcd7422471694961f09898eca2c48abb9",
+      "message": "Add customer staging table"
+    },
+    {
+      "hash": "348409398ff240557da269d6a2d5251d7781d6ac",
+      "message": "Standardize payment fields"
+    },
+    {
+      "hash": "bd8aaf6d943d4fdd0c0e317a14dad0a1cbb05a13",
+      "message": "Document gold model"
+    },
+    {
+      "hash": "f662e6eef6d3974f5c0e9ad768121af4d90ae2f0",
+      "message": "Sort monthly output newest first"
+    }
+  ],
   "expected_total_usd": 1672.0,
   "reported_total_usd": 167200.0,
-  "inflation_factor": 100.0
+  "inflation_factor": 100.0,
+  "symptoms": [
+    "January 2018 revenue looks much higher than expected. Investigate the root cause.",
+    "Finance says January 2018 revenue should be far lower than the revenue report shows. Investigate the root cause."
+  ]
 }

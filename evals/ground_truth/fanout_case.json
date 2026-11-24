@@ -1,0 +1,44 @@
+{
+  "scenario": "fanout_case",
+  "tier": 1,
+  "origin_layer": "silver",
+  "origin_table": "silver.order_totals",
+  "affected_table": "gold.monthly_orders",
+  "faulty_commit": "920c18420d4415e76f45a393478dbc0ffbe4adf3",
+  "last_good_commit": "70dfbde2ac6b664fe319f3bde01bfd66d867e7ae",
+  "deployed_commit": "a1ff4f01441b15f5f06ed9c3c6a55630935bca8a",
+  "undeployed_commits": [
+    "29cddb5134c4e28d925c1aea391f020040be7247"
+  ],
+  "commits": [
+    {
+      "hash": "6d357e3aa615456a17aae37c45e1e54d8ad59fdd",
+      "message": "Initialize order transformations"
+    },
+    {
+      "hash": "70dfbde2ac6b664fe319f3bde01bfd66d867e7ae",
+      "message": "Add customer staging table"
+    },
+    {
+      "hash": "920c18420d4415e76f45a393478dbc0ffbe4adf3",
+      "message": "Keep payment detail on order totals"
+    },
+    {
+      "hash": "a1ff4f01441b15f5f06ed9c3c6a55630935bca8a",
+      "message": "Document gold model"
+    },
+    {
+      "hash": "29cddb5134c4e28d925c1aea391f020040be7247",
+      "message": "Sort monthly output newest first"
+    }
+  ],
+  "expected_order_count": 99,
+  "reported_order_count": 113,
+  "expected_avg_order_value_usd": 16.89,
+  "reported_avg_order_value_usd": 14.8,
+  "revenue_unaffected": true,
+  "symptoms": [
+    "Average order value for January 2018 looks much lower than expected. Investigate the root cause.",
+    "The order count for January 2018 in the monthly orders report looks too high. Investigate the root cause."
+  ]
+}
